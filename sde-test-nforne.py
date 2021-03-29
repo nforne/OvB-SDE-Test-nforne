@@ -8,8 +8,8 @@ spread_l = []
 opl = []
 for i in db_set_ip:
     q = 0
-    i-id = []
-    j-id = []
+    i_id = []
+    j_id = []
     if i["type"] == "corporate":
         for j in db_set_ip:
             if j["type"] == "government":
