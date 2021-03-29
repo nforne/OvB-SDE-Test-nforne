@@ -35,9 +35,10 @@ print(spread_min)
 
 fo = open("sample_output.json", "r")
 xo = json.loads(fo.read())
-print(xo["data"])
 db_set_op = xo["data"]
 
 db_set_op[0]["corporate_bond_id"] = opl[0]
 db_set_op[0]["government_bond_id"] = opl[1]
 db_set_op[0]["spread_to_benchmark"] = f'{int(round((float(opl[0]) - float(opl[1])), 0)) * 100}bps'
+
+print(db_set_op)
