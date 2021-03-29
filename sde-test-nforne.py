@@ -14,7 +14,7 @@ for i in db_set_ip:
         for j in db_set_ip:
             if j["type"] == "government":
                 if type(i['yield']) != 'NoneType' and type(j['yield']) != 'NoneType':
-                    spread = (float(i['yield'].replace('%', '')) - float(j['yield'].replace('%', '')))
+                    spread = float(i['yield'].replace('%', '')) - float(j['yield'].replace('%', ''))
                     q += spread
                     spread_l.append(spread)
                 else:
