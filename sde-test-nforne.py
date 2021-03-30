@@ -6,6 +6,7 @@ db_set_ip = xi["data"]
 
 spread_l = []
 opl = []
+op_s2b = 0
 for i in db_set_ip:
     if i["type"] == "corporate":
         for j in db_set_ip:
@@ -28,6 +29,7 @@ for i in db_set_ip:
                     if spread == min(spread_l):
                         opl.append(i["id"])
                         opl.append(j["id"])
+                        op_s2b += spread
                     else:
                         pass
                 else:
@@ -48,6 +50,6 @@ db_set_op = xo["data"]
 
 db_set_op[0]["corporate_bond_id"] = opl[0]
 db_set_op[0]["government_bond_id"] = opl[1]
-db_set_op[0]["spread_to_benchmark"] = f'{int(round((float(opl[0]) - float(opl[1])), 0)) * 100}bps'
+db_set_op[0]["spread_to_benchmark"] = f'{int(round(float(op_s2b), 0)) * 100}bps'
 
 print(db_set_op)
