@@ -13,7 +13,7 @@ while True:
     except Exception as e:
         print(e)
 
-fi = open(input_f, "r")
+fi = open("input_file.json", "r")
 xi = json.loads(fi.read())
 db_set_ip = xi["data"]
 
@@ -27,7 +27,6 @@ for r in db_set_ip:
         db_set_ip.remove(r)
     else:
         pass
-
 for i in db_set_ip:
     if i["type"] == "corporate":
         for j in db_set_ip:
@@ -56,6 +55,12 @@ for i in db_set_ip:
                             u = ''.join(map(str, t))
                             v += u
                         opl_t.append(v)
+                        if opt == min(opl_t):
+                            opl.append(i["id"])
+                            opl.append(j["id"])
+                            op_s2b += spread
+                        else:
+                            pass
 
                     elif spread == min(spread_l):
                         opl.append(i["id"])
@@ -63,6 +68,7 @@ for i in db_set_ip:
                         op_s2b += spread
                     else:
                         pass
+
                 else:
                     pass
             else:
@@ -70,9 +76,9 @@ for i in db_set_ip:
     else:
         pass
 
-
 print(spread_l)
-print(min(spread_l))
+# if min(spread_l) != []:
+#     print(min(spread_l))
 
 fo = open("output_file.json", "r")
 xo = json.loads(fo.read())
