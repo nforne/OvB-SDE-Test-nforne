@@ -23,7 +23,7 @@ opl_t = []
 op_s2b = 0
 
 for r in db_set_ip:
-    if r["id"] != str or r["type"] != str or r["tenor"] != str or r["yield"] != str or r["amount_outstanding"] != str:
+    if r["id"] or r["type"] or r["tenor"] or r["yield"] or r["amount_outstanding"] != str:
         db_set_ip.remove(r)
     else:
         pass
