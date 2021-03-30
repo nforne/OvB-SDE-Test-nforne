@@ -1,15 +1,15 @@
 import json
 
-print("Place the input_file.json in the same working directory as this script")
+print("Place the input_file.json file in the same working directory as this script")
 print("You must not replace or mutilate the output file herein in any way. It's a part of this script. Copy it at the "
       "end of your run if need be")
 while True:
     try:
-        print("The input and output files must be named 'input_file.json' and 'output_file.json' respectively")
+        print("The input file must be named 'input_file.json'")
         input_f = input("Enter the input file name: ")
         if input_f != "input_file.json":
-            print("The input and output files must be named 'input_file.json' and 'output_file.json' respectively")
-        elif input_f == "input_file.json" and output_f == "output_file.json":
+            print("The input file must be named 'input_file.json'")
+        elif input_f == "input_file.json":
             break
     except Exception as e:
         print(e)
