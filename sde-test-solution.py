@@ -73,8 +73,10 @@ for i in db_set_ip:
         pass
 
 print(spread_l)
-# if min(spread_l) != []:
-#     print(min(spread_l))
+if spread_l != []:
+    print(min(spread_l))
+else:
+    pass
 
 fo = open("output_file.json", "r")
 xo = json.loads(fo.read())
