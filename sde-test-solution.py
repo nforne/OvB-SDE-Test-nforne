@@ -5,7 +5,6 @@ print("You must not replace or mutilate the output file herein in any way. It's 
       "end of your run if need be")
 while True:
     try:
-        print("The input file must be named 'input_file.json'")
         input_f = input("Enter the input file name: ")
         if input_f != "input_file.json":
             print("The input file must be named 'input_file.json'")
