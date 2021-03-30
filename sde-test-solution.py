@@ -1,6 +1,20 @@
 import json
 
-fi = open("sample_input.json", "r")
+print("Place the input_file.json in the same working directory as this script")
+print("You must not replace the output file herein. Copy it at the end of your run if need be")
+while True:
+    try:
+        print("The input and output files must be named 'input_file.json' and 'output_file.json' respectively")
+        input_f = input("Enter the input file name: ")
+        output_f = input("Enter the output file name: ")
+        if input_f != "input_file.json" and output_f != "output_file.json":
+            print("The input and output files must be named 'input_file.json' and 'output_file.json' respectively")
+        elif input_f == "input_file.json" and output_f == "output_file.json":
+            break
+    except Exception as e:
+        print(e)
+
+fi = open(input_f, "r")
 xi = json.loads(fi.read())
 db_set_ip = xi["data"]
 
@@ -43,7 +57,7 @@ for i in db_set_ip:
 print(spread_l)
 print(min(spread_l))
 
-fo = open("sample_output.json", "r")
+fo = open(output_f, "r")
 xo = json.loads(fo.read())
 db_set_op = xo["data"]
 
