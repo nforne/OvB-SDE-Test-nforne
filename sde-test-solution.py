@@ -13,7 +13,7 @@ while True:
     except Exception as e:
         print(e)
 
-fi = open("input_file.json", "r")
+fi = open(input_f, "r")
 xi = json.loads(fi.read())
 db_set_ip = xi["data"]
 
