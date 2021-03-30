@@ -41,8 +41,7 @@ for i in db_set_ip:
 
 
 print(spread_l)
-spread_min = min(spread_l)
-print(spread_min)
+print(min(spread_l))
 
 fo = open("sample_output.json", "r")
 xo = json.loads(fo.read())
