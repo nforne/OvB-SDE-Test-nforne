@@ -7,15 +7,11 @@ db_set_ip = xi["data"]
 spread_l = []
 opl = []
 for i in db_set_ip:
-    q = 0
-    i_id = []
-    j_id = []
     if i["type"] == "corporate":
         for j in db_set_ip:
             if j["type"] == "government":
                 if type(i['yield']) != 'NoneType' and type(j['yield']) != 'NoneType':
                     spread = float(i['yield'].replace('%', '')) - float(j['yield'].replace('%', ''))
-                    q += spread
                     spread_l.append(spread)
                 else:
                     pass
@@ -23,11 +19,24 @@ for i in db_set_ip:
                 pass
     else:
         pass
-    if q == min(spread_l):
-        opl.append(i["id"])
-        opl.append(j["id"])
+for i in db_set_ip:
+    if i["type"] == "corporate":
+        for j in db_set_ip:
+            if j["type"] == "government":
+                if type(i['yield']) != 'NoneType' and type(j['yield']) != 'NoneType':
+                    spread = float(i['yield'].replace('%', '')) - float(j['yield'].replace('%', ''))
+                    if spread == min(spread_l):
+                        opl.append(i["id"])
+                        opl.append(j["id"])
+                    else:
+                        pass
+                else:
+                    pass
+            else:
+                pass
     else:
         pass
+
 
 print(spread_l)
 spread_min = min(spread_l)
