@@ -44,31 +44,27 @@ for i in db_set_ip:
     if i["type"] == "corporate":
         for j in db_set_ip:
             if j["type"] == "government":
-                if type(i['yield']) != 'NoneType' and type(j['yield']) != 'NoneType':
-                    spread = float(i['yield'].replace('%', '')) - float(j['yield'].replace('%', ''))
-                    if spread == min(spread_l) and spread_l.count(spread) > 1:
-                        opt = float(i['tenor'].replace(' years', '')) - float(j['tenor'].replace(' years', ''))
-                        t = list(str(opt))
-                        v = 0
-                        if "-" in t:
-                            t.remove("-")
-                            u = ''.join(map(str, t))
-                            v += float(u)
-                        opl_t.append(v)
-                        if opt == min(opl_t):
-                            opl.append(i["id"])
-                            opl.append(j["id"])
-                            op_s2b += spread
-                        else:
-                            pass
-
-                    elif spread == min(spread_l):
+                spread = float(i['yield'].replace('%', '')) - float(j['yield'].replace('%', ''))
+                if spread == min(spread_l) and spread_l.count(spread) > 1:
+                    opt = float(i['tenor'].replace(' years', '')) - float(j['tenor'].replace(' years', ''))
+                    t = list(str(opt))
+                    v = 0
+                    if "-" in t:
+                        t.remove("-")
+                        u = ''.join(map(str, t))
+                        v += float(u)
+                    opl_t.append(v)
+                    if opt == min(opl_t):
                         opl.append(i["id"])
                         opl.append(j["id"])
                         op_s2b += spread
                     else:
                         pass
 
+                elif spread == min(spread_l):
+                    opl.append(i["id"])
+                    opl.append(j["id"])
+                    op_s2b += spread
                 else:
                     pass
             else:
