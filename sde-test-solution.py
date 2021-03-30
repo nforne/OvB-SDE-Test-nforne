@@ -2,8 +2,7 @@ import json
 
 print("Place the input_file.json in the same working directory as this script")
 print("You must not replace or mutilate the output file herein in any way. It's a part of this script. Copy it at the "
-      "end of your run if "
-      "need be")
+      "end of your run if need be")
 while True:
     try:
         print("The input and output files must be named 'input_file.json' and 'output_file.json' respectively")
