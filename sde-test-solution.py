@@ -1,14 +1,14 @@
 import json
 
 print("Place the input_file.json in the same working directory as this script")
-print("You must not replace the output file herein. It's a part of this script. Copy it at the end of your run if "
+print("You must not replace or mutilate the output file herein in any way. It's a part of this script. Copy it at the "
+      "end of your run if "
       "need be")
 while True:
     try:
         print("The input and output files must be named 'input_file.json' and 'output_file.json' respectively")
         input_f = input("Enter the input file name: ")
-        output_f = input("Enter the output file name: ")
-        if input_f != "input_file.json" and output_f != "output_file.json":
+        if input_f != "input_file.json":
             print("The input and output files must be named 'input_file.json' and 'output_file.json' respectively")
         elif input_f == "input_file.json" and output_f == "output_file.json":
             break
@@ -58,7 +58,7 @@ for i in db_set_ip:
 print(spread_l)
 print(min(spread_l))
 
-fo = open(output_f, "r")
+fo = open("output_file.json", "r")
 xo = json.loads(fo.read())
 db_set_op = xo["data"]
 
