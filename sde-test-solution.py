@@ -50,6 +50,9 @@ for i in db_set_ip:
                         t.remove("-")
                         u = ''.join(map(str, t))
                         v += float(u)
+                    else:
+                        u = ''.join(map(str, t))
+                        v += float(u)
                     opl_t.append(v)
                     if opt == min(opl_t):
                         opl.append(i["id"])
