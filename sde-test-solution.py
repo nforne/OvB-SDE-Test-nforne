@@ -57,14 +57,14 @@ for i in db_set_ip:
                     if v == min(opl_t):
                         opl.append(i["id"])
                         opl.append(j["id"])
-                        op_s2b += spread
+                        op_s2b = spread
                     else:
                         pass
 
                 elif spread == min(spread_l):
                     opl.append(i["id"])
                     opl.append(j["id"])
-                    op_s2b += spread
+                    op_s2b = spread
                 else:
                     pass
             else:
