@@ -54,7 +54,7 @@ for i in db_set_ip:
                         u = ''.join(map(str, t))
                         v += float(u)
                     opl_t.append(v)
-                    if opt == min(opl_t):
+                    if v == min(opl_t):
                         opl.append(i["id"])
                         opl.append(j["id"])
                         op_s2b += spread
